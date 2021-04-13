@@ -1,0 +1,472 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Services</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'weather_info/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'weather_info/css/fontawesome.css' %}">
+    <link rel="stylesheet" href='{% static "weather_info/css/style.css" %}'>
+    <link rel="stylesheet" href="{% static 'weather_info/css/owl.css' %}">
+
+    <!-- Custom CSS -->
+    <style type="text/css">
+
+      #result{border:solid;
+              border-color:lightblue;
+              border-radius:10px;
+              margin-top:30px;
+              background-color:#edeef7; 
+              }
+      #inner{
+        background-color:#b8b5ff ;
+        padding-top:30px;
+        padding-bottom:30px;
+        margin-top:5px;
+        color:#e4fbff;
+
+      }
+
+      img.d-block{
+        height:200px;
+        width:200px;
+        padding:10px;
+      }
+
+      #shadow{
+        text-shadow: 3px 3px 6px #7868e6;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'Home' %}"><h2>Weather <em>Updates</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Home' %}">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'About' %}">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="functional-buttons">
+            <ul>
+              <li><a href="#">Log in</a></li> change
+              <li><a href="#">Sign Up</a></li>  
+            </ul>
+          </div> -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Heading Starts Here -->
+    <div class="page-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Our Services</h1>
+            <p><a href="{% url 'Home' %}">Home</a> / <span>Our Services</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Heading Ends Here -->
+
+
+    <!-- Services Starts Here -->
+    
+
+              {% if request.method == 'POST' %}
+       <div class="container mt-5">       
+        <div class="section-heading text-center" >
+              <span>Results based on query.</span>
+              <h2 id="bm">{{name}}'s weather information.</h2>
+             </div> 
+            </div>
+                       
+<div style="background-color:#7868e6 " class="container-fluid p-5 ">
+ <div class="container" > 
+ <div class="row">
+  <div class="col-md-4 ">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/longitude.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Longitude is <br><h2 id="shadow">  {{longitude}} </h2><small> (In Degrees)</small></h4>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-md-4">
+    <div  id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/latitude.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Latitude is <br><h2 id="shadow"> {{latitude}} </h2><small> (In Degrees)</small> </h4>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/cloudy.png' %}" alt="...">
+      <div id="inner"  class="caption text-center">
+        <h4>Weather condition is <br><h2 id="shadow"> {{weather_condition}} </h2><!--  weather condition is {{weather_condition_des}} --></h4>
+        
+        
+    </div>
+  </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/hot.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Temperature is <br><h2 id="shadow"> {{temperature}}</h2> <small> (In Kelvin)</small></h4>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/high_temp.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Minimum temperature <br>recorded is <br><h2 id="shadow"> {{minimum_temperature}}</h2><small> (In Kelvin)</small></h4>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/low_temp.png' %}" alt="...">
+      <div id="inner"  class="caption text-center">
+        <h4>Maximum temperature recorded is <br> <h2 id="shadow"> {{maximum_temperature}}</h2><small> (In Kelvin)</small></h4>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/pressure-gauge.png' %}" alt="...">
+      <div id="inner"  class="caption text-center">
+        <h4>Pressure is<br><h2 id="shadow"> {{pressure}}</h2><small> (In hPa i.e hectoPascal)</small></h4>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/humidity.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Humidity is <br><h2 id="shadow"> {{humidity}}%</h2></h4>
+
+        
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/seen.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Visibility is <br><h2 id="shadow"> {{visibility}}</h2><small> (In meter)</small></h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/speedometer.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Wind speed is <br><h2 id="shadow">{{wind_speed}}</h2><small> (In meter/second)</small></h4>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/windsock.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Wind direction is  <br><h2 id="shadow"> {{wind_direction}}</h2><small> (In Degree, meteorological)</small></h4>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/time-zone.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Time at calculation  <br><h2 id="shadow"> {{time_of_calculation}}</h2></h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/sunrise.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Time of sunrise is<br><h2 id="shadow"> {{sunrise}}<h2></h4>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/sunset.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Time of sunset is <br><h2 id="shadow"> {{sunset}}</h2></h4>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class=" col-md-4">
+    <div id="result" class="thumbnail">
+      <img class="mx-auto d-block" src="{% static 'weather_info/images/time-zone.png' %}" alt="...">
+      <div id="inner" class="caption text-center">
+        <h4>Location's timezone is <br><h2 id="shadow"> {{timezone}}</h2></h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+              {% else %} 
+<div class="services-section services-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="section-heading">
+              <span>Input location related information</span>
+              <h2 id="bm">Input Form</h2>
+              <p>Enter the Name of your country and your city.</p>
+            </div>
+          </div>
+          <div class="contact-form col-md-6">               
+          <form id="contact" action="" method="POST">
+            {% csrf_token %}
+            <label for="fname"><b>Country:</b></label><br>
+             <input list='test' type="text" id="fname" name="fname" placeholder="i.e Pakistan, Canada etc" required autofocus><datalist id='test'><option value="Pakistan">
+              {% for country in countries_list %}
+             <option value="{{country}}">
+              {% endfor %}
+             </datalist><br>
+              <label for="lname"><b>City:</b></label><br>
+             <input type="text" id="lname" name="lname" placeholder="i.e London, Islamabad etc"><br><br>
+             <button id="form-submit" class="main-button"type="submit" value="Submit" required>Submit</button>
+             
+          </form> 
+          {% endif %} 
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- Services Ends Here -->
+
+
+
+
+
+    <!-- Testimonials Starts Here -->
+    <div class="testimonials-section">
+      <div class="container">
+        <div class="row">
+          
+          <!-- <div class="col-md-12">
+            <div class="section-heading">
+              <span>Testimonials</span>
+              <h2>What they say about us</h2>
+            </div>
+          </div>
+          <div class="col-md-10 offset-md-1">
+            <div class="owl-testimonials owl-carousel">
+              <div class="testimonial-item">
+                <div class="icon">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p>"Ut elementum a elit sed tristique. Pellentesque sed semper erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean quam erat, rutrum ut malesuada."</p>
+                <h4>William Smith</h4>
+                <span>New Co-Founder</span>
+              </div>
+              <div class="testimonial-item">
+                <div class="icon">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p>"Quisque lacinia sed velit et maximus. Quisque dictum, lacus a malesuada finibus, arcu magna luctus risus, eu accumsan risus elit vitae lacus."</p>
+                <h4>Vinny Smart</h4>
+                <span>Digital Marketer</span>
+              </div>
+              <div class="testimonial-item">
+                <div class="icon">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p>"Vestibulum mauris ipsum, tempor tincidunt justo sit amet, bibendum tincidunt dui. Aenean molestie, odio quis viverra ultricies, leo tellus lacinia neque, sit amet maximus tortor nunc aliquet felis."</p>
+                <h4>Trevor Liam</h4>     change
+                <span>Technology Chef</span>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- Testimonials Ends Here -->
+
+
+    <!-- Footer Starts Here -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>About Us</h2>
+              </div>
+              <p>Host Cloud is provided by TemplateMo for free of charge. Anyone can download and use this CSS Bootstrap template for commercial purposes.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>Hosting Plans</h2>
+              </div>
+              <ul class="footer-list">
+                <li><a href="#">Basic Cloud 5X</a></li>
+                <li><a href="#">Cloud VPS 10X</a></li>
+                <li><a href="#">Advanced Cloud</a></li>
+                <li><a href="#">Custom Designs</a></li>
+                <li><a href="#">Special Solutions</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>Useful Links</h2>
+              </div>
+              <ul class="footer-list">
+                <li><a href="#">Cloud Hosting Platform</a></li>
+                <li><a href="#">Light Speed Zone</a></li>
+                <li><a href="#">Content Delivery Network</a></li>
+                <li><a href="#">Customer Support</a></li>
+                <li><a href="#">Latest News</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>More Information</h2>
+              </div>
+              <ul class="footer-list">
+                <li>Phone: <a href="#">010-020-0560</a></li>
+                <li>Email: <a href="#">mail@company.com</a></li>
+                <li>Support: <a href="#">support@company.com</a></li>
+                <li>Website: <a href="#">www.company.com</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="sub-footer">
+              <p>Copyright &copy; 2020 Cloud Hosting Company
+				- Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Ends Here -->
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'weather_info/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'weather_info/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'weather_info/js/custom.js' %}"></script>
+    <script src="{% static 'weather_info/js/owl.js' %}"></script>
+    <script src="{% static 'weather_info/js/accordions.js' %}"></script>
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+  </body>
+</html>
