@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link rel="icon"  href="{% static 'weather_info/images/cloud.png' %}">
+
 
     <title>Services</title>
 
@@ -378,7 +380,7 @@
     <!-- Testimonials Ends Here -->
 
 
-    <!-- Footer Starts Here -->
+     <!-- Footer Starts Here -->
     <footer>
       <div class="container">
         <div class="row">
@@ -387,21 +389,20 @@
               <div class="footer-heading">
                 <h2>About Us</h2>
               </div>
-              <p>Host Cloud is provided by TemplateMo for free of charge. Anyone can download and use this CSS Bootstrap template for commercial purposes.</p>
+              <p>I am a student currently pursuing my CS degree at iub aspiring to become a web developer. This project was created for practice</p>
             </div>
           </div>
           
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="footer-item">
               <div class="footer-heading">
-                <h2>Hosting Plans</h2>
+                <h2>Service</h2>
               </div>
               <ul class="footer-list">
-                <li><a href="#">Basic Cloud 5X</a></li>
-                <li><a href="#">Cloud VPS 10X</a></li>
-                <li><a href="#">Advanced Cloud</a></li>
-                <li><a href="#">Custom Designs</a></li>
-                <li><a href="#">Special Solutions</a></li>
+                <li><a href="{% url 'Services' %}">GO to Services page.</a></li>
+                <li><a href="{% url 'About' %}">GO to About page.</a></li>
+                
+                
               </ul>
             </div>
           </div>
@@ -413,10 +414,10 @@
                 <h2>Useful Links</h2>
               </div>
               <ul class="footer-list">
-                <li><a href="#">Cloud Hosting Platform</a></li>
-                <li><a href="#">Light Speed Zone</a></li>
-                <li><a href="#">Content Delivery Network</a></li>
-                <li><a href="#">Customer Support</a></li>
+                <li><a href="https://www.free-css.com/">Free CSS website</a></li>
+                <li><a href="https://www.w3schools.com/">Great web developement learning resource</a></li>
+                <li><a href="https://www.w3schools.com/">Bootstap</a></li>
+                <li><a href="{% url 'Contact' %}">Customer Support</a></li>
                 <li><a href="#">Latest News</a></li>
               </ul>
             </div>
@@ -427,18 +428,18 @@
               <div class="footer-heading">
                 <h2>More Information</h2>
               </div>
-              <ul class="footer-list">
-                <li>Phone: <a href="#">010-020-0560</a></li>
-                <li>Email: <a href="#">mail@company.com</a></li>
+               <ul class="footer-list">
+                <li>Phone: <a href="#">092-304-2622690</a></li>
+                <li>Email: <a href="#">abdullahozeeshan@gmail.com</a></li>
                 <li>Support: <a href="#">support@company.com</a></li>
-                <li>Website: <a href="#">www.company.com</a></li>
+                <li>Website: <a href="https://github.com/abdullahz222">https://github.com/abdullahz222</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md-12">
             <div class="sub-footer">
-              <p>Copyright &copy; 2020 Cloud Hosting Company
-				- Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+              <p>Copyright &copy; 2021 Weather Application Developed by Abdullah Zeeshan and
+        - Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
             </div>
           </div>
         </div>

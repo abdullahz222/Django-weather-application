@@ -1277,7 +1277,7 @@ def list_country_only():
 	for out in range(0,990,4):
 		list_country.append(output_list[out])
 	return(list_country)
-print(list_country_only())
+
 
 
 ##INSERTIND DATA IN TABLE
