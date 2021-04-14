@@ -5,5 +5,6 @@ This Django web application uses Open Weather Api and displays the weather infor
 Requirements.txt file is present inside, open your command prompt and
 * Create a virtual environment( optional ) 
 * Navigate inside project and run ` pip install -r requirements.txt `
-* Run ` python manage.py runserver ` 
+* Run ` python manage.py runserver `
+
 Access the application running locally on you machine through [http://127.0.0.1:8000/]
