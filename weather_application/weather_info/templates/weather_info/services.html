@@ -120,7 +120,7 @@
     <!-- Services Starts Here -->
     
 
-              {% if request.method == 'POST' %}
+              {% if request.method == 'POST' and found %}
        <div class="container mt-5">       
         <div class="section-heading text-center" >
               <span>Results based on query.</span>
@@ -286,7 +286,7 @@
     <div id="result" class="thumbnail">
       <img class="mx-auto d-block" src="{% static 'weather_info/images/time-zone.png' %}" alt="...">
       <div id="inner" class="caption text-center">
-        <h4>Location's timezone is <br><h2 id="shadow"> {{timezone}}</h2></h4>
+        <h4>Location's timezone is <br><h2 id="shadow"> {{timezone}}</h2><small>Shift in seconds.</small></h4>
         
       </div>
     </div>
@@ -299,7 +299,7 @@
 
 
 
-              {% else %} 
+              {% elif request.method == 'GET' %} 
 <div class="services-section services-page">
       <div class="container">
         <div class="row">
@@ -324,6 +324,15 @@
              <button id="form-submit" class="main-button"type="submit" value="Submit" required>Submit</button>
              
           </form> 
+
+          {% else %}
+
+            <div class="container mt-5 ">
+              <h3>The information you provided is invalid. Please enter the correct Country and City name.</h3>
+                <div class="text-center m-5">
+                  <a class="btn btn-danger" href="">Try again.</a>
+                </div>
+              </div>
           {% endif %} 
         </div>
         </div>
@@ -415,10 +424,10 @@
               </div>
               <ul class="footer-list">
                 <li><a href="https://www.free-css.com/">Free CSS website</a></li>
-                <li><a href="https://www.w3schools.com/">Great web developement learning resource</a></li>
-                <li><a href="https://www.w3schools.com/">Bootstap</a></li>
+                <li><a href="https://openweathermap.org/">Open Weather Map's website</a></li>
+                <li><a href="https://www.w3schools.com/">Learn web development</a></li>
                 <li><a href="{% url 'Contact' %}">Customer Support</a></li>
-                <li><a href="#">Latest News</a></li>
+                
               </ul>
             </div>
           </div>

@@ -8,9 +8,15 @@ def convertor(country_name):
 	c = conn.cursor()
 	with conn:
 		c.execute("SELECT * FROM country_code WHERE names = '{}'".format(name))
-		output = c.fetchone()[3]
-	conn.close()
-	return output
+		try:
+			output = c.fetchone()[3]			
+			return output
+			
+		except Exception as e:
+			pass
+			
+
+
 
 
 
