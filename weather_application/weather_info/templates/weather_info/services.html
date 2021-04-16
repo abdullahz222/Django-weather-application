@@ -1,28 +1,11 @@
+{% extends 'weather_info/index.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-    <link rel="icon"  href="{% static 'weather_info/images/cloud.png' %}">
-
-
-    <title>Services</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'weather_info/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{% static 'weather_info/css/fontawesome.css' %}">
-    <link rel="stylesheet" href='{% static "weather_info/css/style.css" %}'>
-    <link rel="stylesheet" href="{% static 'weather_info/css/owl.css' %}">
+   {% block title %}Services{% endblock %}
 
     <!-- Custom CSS -->
+    {% block style %}
+
     <style type="text/css">
 
       #result{border:solid;
@@ -52,30 +35,9 @@
 
     </style>
 
-  </head>
+    {% endblock %}
 
-  <body>
-
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-    <!-- Header -->
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="{% url 'Home' %}"><h2>Weather <em>Updates</em></h2></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+              {% block navurl %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'Home' %}">Home
                   <span class="sr-only">(current)</span>
@@ -90,18 +52,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
               </li>
-            </ul>
-          </div>
-          <!-- <div class="functional-buttons">
-            <ul>
-              <li><a href="#">Log in</a></li> change
-              <li><a href="#">Sign Up</a></li>  
-            </ul>
-          </div> -->
-        </div>
-      </nav>
-    </header>
-
+              {% endblock %}
+    {% block content %}
     <!-- Page Content -->
     <!-- Heading Starts Here -->
     <div class="page-heading header-text">
@@ -338,145 +290,9 @@
         </div>
       </div>
     </div>
-    <!-- Services Ends Here -->
+    
 
 
+    <hr style="margin:50px">
 
-
-
-    <!-- Testimonials Starts Here -->
-    <div class="testimonials-section">
-      <div class="container">
-        <div class="row">
-          
-          <!-- <div class="col-md-12">
-            <div class="section-heading">
-              <span>Testimonials</span>
-              <h2>What they say about us</h2>
-            </div>
-          </div>
-          <div class="col-md-10 offset-md-1">
-            <div class="owl-testimonials owl-carousel">
-              <div class="testimonial-item">
-                <div class="icon">
-                  <i class="fa fa-quote-right"></i>
-                </div>
-                <p>"Ut elementum a elit sed tristique. Pellentesque sed semper erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean quam erat, rutrum ut malesuada."</p>
-                <h4>William Smith</h4>
-                <span>New Co-Founder</span>
-              </div>
-              <div class="testimonial-item">
-                <div class="icon">
-                  <i class="fa fa-quote-right"></i>
-                </div>
-                <p>"Quisque lacinia sed velit et maximus. Quisque dictum, lacus a malesuada finibus, arcu magna luctus risus, eu accumsan risus elit vitae lacus."</p>
-                <h4>Vinny Smart</h4>
-                <span>Digital Marketer</span>
-              </div>
-              <div class="testimonial-item">
-                <div class="icon">
-                  <i class="fa fa-quote-right"></i>
-                </div>
-                <p>"Vestibulum mauris ipsum, tempor tincidunt justo sit amet, bibendum tincidunt dui. Aenean molestie, odio quis viverra ultricies, leo tellus lacinia neque, sit amet maximus tortor nunc aliquet felis."</p>
-                <h4>Trevor Liam</h4>     change
-                <span>Technology Chef</span>
-              </div>
-            </div>
-          </div> -->
-        </div>
-      </div>
-    </div>
-    <!-- Testimonials Ends Here -->
-
-
-     <!-- Footer Starts Here -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="footer-item">
-              <div class="footer-heading">
-                <h2>About Us</h2>
-              </div>
-              <p>I am a student currently pursuing my CS degree at iub aspiring to become a web developer. This project was created for practice</p>
-            </div>
-          </div>
-          
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="footer-item">
-              <div class="footer-heading">
-                <h2>Service</h2>
-              </div>
-              <ul class="footer-list">
-                <li><a href="{% url 'Services' %}">GO to Services page.</a></li>
-                <li><a href="{% url 'About' %}">GO to About page.</a></li>
-                
-                
-              </ul>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="footer-item">
-              <div class="footer-heading">
-                <h2>Useful Links</h2>
-              </div>
-              <ul class="footer-list">
-                <li><a href="https://www.free-css.com/">Free CSS website</a></li>
-                <li><a href="https://openweathermap.org/">Open Weather Map's website</a></li>
-                <li><a href="https://www.w3schools.com/">Learn web development</a></li>
-                <li><a href="{% url 'Contact' %}">Customer Support</a></li>
-                
-              </ul>
-            </div>
-          </div>
-          
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="footer-item">
-              <div class="footer-heading">
-                <h2>More Information</h2>
-              </div>
-               <ul class="footer-list">
-                <li>Phone: <a href="#">092-304-2622690</a></li>
-                <li>Email: <a href="#">abdullahozeeshan@gmail.com</a></li>
-                <li>Support: <a href="#">support@company.com</a></li>
-                <li>Website: <a href="https://github.com/abdullahz222">https://github.com/abdullahz222</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="sub-footer">
-              <p>Copyright &copy; 2021 Weather Application Developed by Abdullah Zeeshan and
-        - Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Footer Ends Here -->
-
-
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static 'weather_info/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'weather_info/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
-    <!-- Additional Scripts -->
-    <script src="{% static 'weather_info/js/custom.js' %}"></script>
-    <script src="{% static 'weather_info/js/owl.js' %}"></script>
-    <script src="{% static 'weather_info/js/accordions.js' %}"></script>
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-
-  </body>
-</html>
+    {% endblock %}
