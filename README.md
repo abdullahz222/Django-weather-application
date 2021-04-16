@@ -3,7 +3,8 @@ This Django web application uses Open Weather Api and displays the weather infor
 
 ## Set-up
 Requirements.txt file is present inside, open your command prompt and
-* Create a virtual environment( optional ) 
+*  clone this repo using `git clone  `
+* Create a virtual environment( optional )
 * Navigate inside project and run ` pip install -r requirements.txt `
 * Run ` python manage.py runserver `
 
