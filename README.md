@@ -12,3 +12,6 @@ Access the application running locally on you machine through [http://127.0.0.1:
 
 
 ![Capturex](https://user-images.githubusercontent.com/67898270/114850693-7b3e5700-9dfa-11eb-88a8-3a55595e4bd8.PNG)
+
+This project is live and deployed on heroku.
+[https://weatherapptool.herokuapp.com/]
